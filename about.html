@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600"
+      rel="stylesheet"
+    />
+    <title>About</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About </a></li>
+          <li><a href="#">Mon parcours</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="main_title">
+      <h1 class="title_about">ABOUT</h1>
+    </div>
+
+    <section id="principale">
+        <!-- 1er Partie -->
+      <header>
+        <figure>
+          <img src="images/portrait.jpeg" alt="portrait" />
+        </figure>
+        <h2>Prénom Nom</h2>
+        <p>Ma fonction</p>
+        <h3>Mes contacts</h3>
+        <ul>
+          <li>Mail</li>
+          <li>Phone</li>
+          <li>LinkedIn</li>
+          <li>Twitter</li>
+        </ul>
+      </header>
+      <!-- Fin 1er Partie -->
+
+      <!-- 2ème Partie -->
+      <main>
+        <h3>CV</h3>
+        <h4>My Skills</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+        <picture>
+            <source media="(max-width: 768px" srcset="images/paysage-768.jpg">
+            <source media="(max-width: 1000px" srcset="images/paysage-992.jpg">
+            <img src="images/paysage-1200.jpg" alt="test responsive">
+        </picture>
+        <div id="caroussel">
+                <figure><img src="images/image1.jpeg" alt="image 1" /></figure>
+                <figure><img src="images/image2.jpeg" alt="image 2" /></figure>
+                <figure><img src="images/image3.jpeg" alt="image 3" /></figure>
+        </div>
+
+            <div id="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/zE1m5SnpejY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </iframe>
+            </div>
+      </main>
+      <!-- Fin 2ème partie -->
+
+      <!-- 3ème Partie -->
+      <aside>
+          3ème colonne
+      </aside>
+      <!-- Fin 3ème partie -->
+    </section>
+  </body>
+</html>
