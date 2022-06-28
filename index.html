@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+      precision mediump float;
+
+      uniform float time;
+      uniform float mouseX;
+      uniform float mouseY;
+      uniform sampler2D texture;
+      varying vec2 vUv;
+
+      void main() {
+            float d = -distance(vec2(mouseX,mouseY), gl_FragCoord.xy);
+            float r = dot(gl_FragCoord.xy, vec2(0.005,0.005))/d;
+            vec2 tex = vec2(vUv.x + r, vUv.y + r);
+            gl_FragColor = vec4(texture2D(texture, tex).rgb, 1.0);
+      }
+    </script>
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+       precision mediump float;
+       varying vec2 vUv;
+       uniform float time;
+      void main() {
+           vUv  = uv;
+           gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    </script>
+    <section class="mp">
+      <div class="container">
+        <div class="stage"></div>
+        <canvas class="noise-canvas"></canvas>
+      </div>
+    </section>
+
+    <!-- <section>
+      <div class="container">
+        <div class="bg-video">
+          <video
+            src="still life no.1.mp4"
+            type="video/mp4"
+            id="green-video"
+            autoplay
+            loop
+            muted
+            controls
+          ></video>
+          <video
+            src="c_c_low_02.mp4"
+            type="video/mp4"
+            id="pink-video"
+            autoplay
+            muted
+            loop
+          ></video>
+          <video
+            src="ODDLY_WAVES.mp4"
+            type="video/mp4"
+            id="blue-video"
+            autoplay
+            muted
+            loop
+          ></video>
+        </div>
+        <button id="btn-switch-bg">Click Here</button>
+        <-- <button id="btn-switch-bg" onclick="chooseRandom(arr,1)">Click Here</button> -->
+    <!-- </div>
+    </section> -->
+    -->
+
+    <!-- <script>
+      let btn = document.getElementById("btn-switch-bg");
+
+      const greenVideo = document.getElementById("green-video");
+      const pinkVideo = document.getElementById("pink-video");
+      const blueVideo = document.getElementById("blue-video");
+
+      function chooseRandom() {
+        const arr = [greenVideo, pinkVideo, blueVideo];
+        console.log(arr[0]);
+        greenVideo.style = "display: none;";
+        pinkVideo.style = "display: none;";
+        blueVideo.style = "display: none;";
+
+        const res = [];
+
+        const random = Math.floor(Math.random() * arr.length);
+
+        res.push(arr[random]);
+
+        res[0].style = "display: block;";
+        console.log(res);
+      }
+
+      btn.addEventListener("click", chooseRandom, true);
+    </script> -->
+    <script src="script.js"></script>
+  </body>
+</html>
